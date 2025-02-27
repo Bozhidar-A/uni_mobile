@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uni_mobile/screens/CalculatorScreen.dart';
+import 'package:uni_mobile/screens/DrawScreen.dart';
+import 'package:uni_mobile/screens/SquareRootScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,9 +33,9 @@ class MainWrapperState extends State<MainWrapper> {
   int _selectedIndex = 0;
 
   final List<Widget> appBarWidgetDestinations = const [
-    CalculatorsScreen(),
-    Text("index 1"),
-    Text("index 2"),
+    CalculatorScreen(),
+    SquareRootScreen(),
+    DrawScreen(),
     Text("index 3"),
   ];
 
