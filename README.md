@@ -1,16 +1,21 @@
 # uni_mobile
 
-A new Flutter project.
+A new Flutter project written for [University of Ruse's](https://www.uni-ruse.bg/en) mobile apps class as coursework.
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+Requested features:
 
-A few resources to get you started if this is your first Flutter project:
+- A screen with basic math operations (+,-,\*,/) between two numbers
+- A screen performing the square root (√) math operation on a number
+- A screen drawing a box with a light blue border with settable width and height
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Refer to the installation guide on the [flutter website](https://docs.flutter.dev/get-started/install) it self
+2. Clone this project
+3. Select the device you wish to run this on
+
+- This app was made for a mobile apps class, it is recommend to use an Android emulator or IOS simulator
+
+4. Run with `flutter run`
