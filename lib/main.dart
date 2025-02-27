@@ -14,26 +14,31 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MainWrapper(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class MainWrapper extends StatefulWidget {
+  const MainWrapper({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainWrapper> createState() => MainWrapperState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class MainWrapperState extends State<MainWrapper> {
+  int _selectedIndex = 0;
 
-  void _incrementCounter() {
+  final List<Widget> appBarWidgetDestinations = const [
+    Text("index 0"),
+    Text("index 1"),
+    Text("index 2"),
+    Text("index 3"),
+  ];
+
+  void _onAppBarDestinationTap(int newIndex) {
     setState(() {
-      _counter++;
+      _selectedIndex = newIndex;
     });
   }
 
@@ -42,24 +47,34 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: const Text("Uni Mobile Apps Coursework"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            appBarWidgetDestinations.elementAt(_selectedIndex),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedItemColor: Colors.greenAccent,
+        unselectedItemColor: Colors.blueGrey,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calculate),
+            label: "Calculator",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.square_foot),
+            label: "Square Root",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.draw), label: "Drawing"),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onAppBarDestinationTap,
       ),
     );
   }
