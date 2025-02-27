@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uni_mobile/screens/CalculatorScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MainWrapperState extends State<MainWrapper> {
   int _selectedIndex = 0;
 
   final List<Widget> appBarWidgetDestinations = const [
-    Text("index 0"),
+    CalculatorsScreen(),
     Text("index 1"),
     Text("index 2"),
     Text("index 3"),
@@ -49,13 +50,11 @@ class MainWrapperState extends State<MainWrapper> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Uni Mobile Apps Coursework"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            appBarWidgetDestinations.elementAt(_selectedIndex),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Expanded(child: appBarWidgetDestinations.elementAt(_selectedIndex)),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: true,
