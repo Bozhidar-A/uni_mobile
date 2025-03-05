@@ -20,6 +20,7 @@ class DrawScreenState extends State<DrawScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(height: 20), //some buffer so it looks good
             //SingleChildScrollView only handles one direction at a time
             //???? this is dumb
             //wrap in Expanded and handle both axis directions
@@ -29,8 +30,8 @@ class DrawScreenState extends State<DrawScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Container(
-                    height: a.value,
-                    width: b.value,
+                    height: a.value * 10,
+                    width: b.value * 10,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.blue, width: 5),
                     ),
