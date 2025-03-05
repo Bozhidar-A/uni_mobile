@@ -10,9 +10,6 @@ class DrawScreen extends StatefulWidget {
 }
 
 class DrawScreenState extends State<DrawScreen> {
-  double width = 100;
-  double height = 100;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +17,8 @@ class DrawScreenState extends State<DrawScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text("a=${a.value.toStringAsFixed(0)}"),
+            Text("b=${b.value.toStringAsFixed(0)}"),
             const SizedBox(height: 20), //some buffer so it looks good
             //SingleChildScrollView only handles one direction at a time
             //???? this is dumb

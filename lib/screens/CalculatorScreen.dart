@@ -63,14 +63,14 @@ class CalculatorsScreenState extends State<CalculatorScreen> {
               label: "a",
               value: a.value,
               maxDigits: 1,
-              onValueChanged: (newValue) => a.value = newValue!,
+              onValueChanged: (newValue) => a.value = newValue,
             ),
             const SizedBox(height: 20),
             InputField(
               label: "b",
               value: b.value,
               maxDigits: 1,
-              onValueChanged: (newValue) => b.value = newValue!,
+              onValueChanged: (newValue) => b.value = newValue,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
