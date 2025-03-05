@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uni_mobile/state.dart';
 import 'package:uni_mobile/widgets/InputField.dart';
 
 class DrawScreen extends StatefulWidget {
@@ -19,18 +20,6 @@ class DrawScreenState extends State<DrawScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            InputField(
-              label: "width",
-              value: width,
-              onValueChanged: (newValue) => setState(() => width = newValue),
-            ),
-            const SizedBox(height: 20),
-            InputField(
-              label: "height",
-              value: height,
-              onValueChanged: (newValue) => setState(() => height = newValue),
-            ),
-            const SizedBox(height: 20),
             //SingleChildScrollView only handles one direction at a time
             //???? this is dumb
             //wrap in Expanded and handle both axis directions
@@ -40,8 +29,8 @@ class DrawScreenState extends State<DrawScreen> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Container(
-                    height: height,
-                    width: width,
+                    height: a.value,
+                    width: b.value,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.blue, width: 5),
                     ),
